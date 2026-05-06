@@ -1,13 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fotogram</title>
     <link rel="stylesheet" href="./style.css">
 </head>
-<body>
-    
+
+<body onload="renderImages()">
+    <header>
+        <div class="header_content">
+            <img src="./assets/icons/Capa_1.svg" alt="fotogram icon">
+        </div>
+    </header>
+    <main>
+        <h1>Your personal photo album</h1>
+        <div class="images" id="images">
+        </div>
+    </main>
+    <footer>
+        <div class="footer_content">
+            <img src="./assets/icons/Logo.svg" alt="developer akademie logo">
+            <p>© 2023 Developer Akademie GmbH</p>
+            <img src="./assets/img/footer_background.png" alt="dark blue background" class="footer_background">
+        </div>
+    </footer>
+    <dialog>
+        <header></header>
+        <main></main>
+        <footer></footer>
+    </dialog>
 </body>
 <script src="./script.js"></script>
+
 </html>
