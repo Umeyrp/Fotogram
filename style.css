@@ -185,6 +185,7 @@ footer p {
 .dialog_footer {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 56px;
     color: #F5F5F5;
     font-family: 'Figtree';
@@ -196,9 +197,14 @@ footer p {
 .dialog_footer button {
     height: 60px;
     width: 60px;
-    /* background-color: #FD5B4F; */
-    /* opacity: 0.1; */
+    background-color: rgb(253 91 79 / 10%);
     border-radius: 100px;
+    border: none;
+    cursor: pointer;
+}
+
+.dialog_footer p {
+    width: 30px;
 }
 
 

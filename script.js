@@ -39,6 +39,7 @@ function renderImages() {
 }
 
 function openDialog(index) {
+    dialogRef.innerHTML = "";
     dialogRef.innerHTML = `        
     <div class="dialog_wrapper">
         <header class="dialog_header">
@@ -51,11 +52,11 @@ function openDialog(index) {
             <img src="./assets/img/${images[index]}" alt="">
         </section>
         <div class="dialog_footer">
-            <button>
+            <button onclick="indexMoveBack(${index})">
                 <img src="./assets/icons/Arrow-left.svg" alt="pfeil links">
             </button>
-            <p>1/12</p>
-            <button>
+            <p>${index + 1}/12</p>
+            <button onclick="indexMoveForward(${index})">
                 <img src="./assets/icons/Arrow-right.svg" alt="pfeil rechts">
             </button>
         </div>
@@ -65,4 +66,21 @@ function openDialog(index) {
 
 function closeDialog() {
     dialogRef.close();
+}
+
+function indexMoveBack(index) {
+    let newindex = index - 1;
+    if (index == 0) {
+        newindex = 11;
+    }
+    openDialog(newindex);
+
+}
+
+function indexMoveForward(index) {
+    let newindex = index + 1;
+    if (index == 11) {
+        newindex = 0;
+    }
+    openDialog(newindex);
 }
