@@ -43,7 +43,8 @@ function renderImages() {
 function getImagesHTML(element, index) {
     return `<button 
                 class="image_card" onclick="openDialog(${index})" style="background-image: url('./assets/img/${element}')" aria-label="Open Image: ${imageTitles[index]}">
-            </button>`;
+            </button>`
+    ;
 }
 
 //Open dialog
@@ -74,7 +75,8 @@ function getDialogHTML(index) {
                         <img src="./assets/icons/arrowRight.svg" aria-label="Next image">
                     </button>
                 </div>
-            </article>`;
+            </article>`
+    ;
 }
 
 //Close dialog
@@ -84,20 +86,20 @@ function closeDialog() {
 
 //Previous image in dialog
 function indexMoveBack(index) {
-    let newindex = index - 1;
+    let newIndex = index - 1;
     if (index == 0) {
-        newindex = 11;
+        newIndex = 11;
     }
-    openDialog(newindex);
+    openDialog(newIndex);
 }
 
 //Next image in dialog
 function indexMoveForward(index) {
-    let newindex = index + 1;
+    let newIndex = index + 1;
     if (index == 11) {
-        newindex = 0;
+        newIndex = 0;
     }
-    openDialog(newindex);
+    openDialog(newIndex);
 }
 
 //Close dialog by clicking outside
