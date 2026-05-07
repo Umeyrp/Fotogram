@@ -30,14 +30,16 @@ const imageTitles = [
 
 const dialogRef = document.getElementById('image_dialog');
 
+//Bilder laden
 function renderImages() {
     let div = document.getElementById('images');
     div.innerHTML = "";
-    images.forEach(element => {
-        div.innerHTML += `<div class='image_card' tabindex='0' onclick="openDialog(${images.indexOf(element)})" onkeydown="handleKey(event, ${images.indexOf(element)})" style='background-image: url("./assets/img/${element}")'></div>`;
+    images.forEach((element, index) => {
+        div.innerHTML += `<button class="image_card" onclick="openDialog(${index})" style="background-image: url('./assets/img/${element}')" aria-label="Open Image: ${imageTitles[index]}"></button>`;
     });
 }
 
+//Dialog öffnen
 function openDialog(index) {
     dialogRef.innerHTML = "";
     dialogRef.innerHTML = `        
@@ -45,7 +47,7 @@ function openDialog(index) {
         <header class="dialog_header">
             <h2>${imageTitles[index]}</h2>
             <button onclick="closeDialog()">
-                <img src="./assets/icons/close.svg" alt="close X icon">
+                <img src="./assets/icons/close.svg" aria-label="Close dialog">
             </button>
         </header>
         <section>
@@ -53,37 +55,32 @@ function openDialog(index) {
         </section>
         <div class="dialog_footer">
             <button onclick="indexMoveBack(${index})">
-                <img src="./assets/icons/arrowLeft.svg" alt="pfeil links">
+                <img src="./assets/icons/arrowLeft.svg" aria-label="Previous image">
             </button>
-            <p>${index + 1}/12</p>
+            <p aria-live="polite">${index + 1}/12</p>
             <button onclick="indexMoveForward(${index})">
-                <img src="./assets/icons/arrowRight.svg" alt="pfeil rechts">
+                <img src="./assets/icons/arrowRight.svg" aria-label="Next image">
             </button>
         </div>
     </article>`;
     dialogRef.showModal();
 }
 
-function handleKey(event, index) {
-    if (event.key === "Enter") {
-        event.preventDefault();
-        openDialog(index);
-    }
-}
-
+//Dialog schließen
 function closeDialog() {
     dialogRef.close();
 }
 
+//Im Dialog ein zurück
 function indexMoveBack(index) {
     let newindex = index - 1;
     if (index == 0) {
         newindex = 11;
     }
     openDialog(newindex);
-
 }
 
+//Im Dialog ein weiter
 function indexMoveForward(index) {
     let newindex = index + 1;
     if (index == 11) {
@@ -92,6 +89,7 @@ function indexMoveForward(index) {
     openDialog(newindex);
 }
 
+//Dialog schließen beim klicken außerhalb
 function enableOutsideClickClose(dialogRef) {
     dialogRef.addEventListener("click", (event) => {
         if (event.target === dialogRef) {

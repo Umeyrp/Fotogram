@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your dynamic photo album">
     <title>Fotogram</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="./assets/icons/fotogram_Logo.svg">
@@ -12,22 +13,22 @@
 <body onload="renderImages()">
     <header>
         <div class="header_content">
-            <img src="./assets/icons/fotogram_text_Logo.svg" alt="fotogram icon">
+            <img src="./assets/icons/fotogram_text_Logo.svg" alt="Fotogram Logo">
         </div>
     </header>
     <main>
         <h1>Your personal photo album</h1>
-        <section class="images" id="images"></section>
+        <section class="images" id="images" aria-label="Photo gallery"></section>
     </main>
     <footer>
-        <section class="footer_content">
-            <img src="./assets/icons/da_Logo.svg" alt="developer akademie logo">
+        <div class="footer_content">
+            <img src="./assets/icons/da_Logo.svg" alt="Developer Akademie Logo">
             <p>© 2023 Developer Akademie GmbH</p>
-            <img src="./assets/img/footer_background.png" alt="dark blue background" class="footer_background">
-        </section>
+            <img src="./assets/img/footer_background.png" alt="" aria-hidden="true" class="footer_background">
+        </div>
     </footer>
 
-    <dialog class="image_dialog" id="image_dialog"></dialog>
+    <dialog class="image_dialog" id="image_dialog" aria-modal="true"></dialog>
 </body>
 <script src="./script.js"></script>
 

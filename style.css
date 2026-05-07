@@ -96,6 +96,7 @@ h1 {
     background-repeat: no-repeat;
     border: 2px solid #124658;
     border-radius: 16px;
+    cursor: pointer;
 }
 
 .image_card:hover {
@@ -150,16 +151,17 @@ footer p {
     display: flex;
     flex-direction: column;
     gap: 48px;
-    padding: 50px;
+    padding: 22px;
 }
 
 .dialog_wrapper section {
     display: flex;
     justify-content: center;
+    width: 250px;
 }
 
 .dialog_wrapper section img {
-    width: 300px;
+    width: 100%;
     height: 375px;
     object-fit: cover;
 }
@@ -167,6 +169,7 @@ footer p {
 .dialog_header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .dialog_header>h2 {
@@ -186,7 +189,7 @@ footer p {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 56px;
+    gap: 1rem;
     font-family: "Figtree";
     font-size: 1rem;
     font-weight: 500;
@@ -212,20 +215,21 @@ dialog[open]::backdrop {
     background-color: #000000a6;
 }
 
-@media screen and (min-width: 992px) {
-    .dialog_wrapper section img {
+@media screen and (min-width: 767px) {
+    .dialog_wrapper section{
         width: 560px;
         height: 374.71px;
     }
 
     .header_content {
-        display: flex;
         justify-content: start;
-        align-items: center;
-        padding: 20px 140px;
     }
 
     .images {
         padding: 56px 135px;
+    }
+
+    .dialog_footer {
+        gap: 56px;
     }
 }
