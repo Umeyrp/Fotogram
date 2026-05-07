@@ -13,6 +13,23 @@ const images = [
     "white_tree_12.jpg"
 ];
 
+const imageTitles = [
+    "Blue Lake",
+    "Neon City",
+    "Dark clouds",
+    "Blue bird",
+    "Hurricane",
+    "Forest Lake",
+    "Duck",
+    "Flashlight Ocean",
+    "White Bird",
+    "Snow Leopard",
+    "Mountains",
+    "White Tree"
+];
+
+const dialogRef = document.getElementById('image_dialog');
+
 function renderImages() {
     let div = document.getElementById('images');
     div.innerHTML = "";
@@ -22,12 +39,13 @@ function renderImages() {
 }
 
 function openDialog(index) {
-    const dialogRef = document.getElementById('image_dialog');
     dialogRef.innerHTML = `        
     <div class="dialog_wrapper">
             <header class="dialog_header">
-                <h2>${images[index]}</h2>
-                <button>X</button>
+                <h2>${imageTitles[index]}</h2>
+                <button onclick="closeDialog()">
+                    <img src="./assets/icons/close.svg ">
+                </button>
             </header>
             <section>
                 <img src="./assets/img/${images[index]}" alt="">
@@ -39,4 +57,8 @@ function openDialog(index) {
             </div>
         </div>`;
     dialogRef.showModal();
+}
+
+function closeDialog(){
+    dialogRef.close();
 }
