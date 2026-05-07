@@ -160,7 +160,7 @@ footer p {
     justify-content: center;
     width: clamp(235px, 50vw, 560px);
     overflow: hidden;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1.5 / 1;
 }
 
 .dialog_wrapper section img {
