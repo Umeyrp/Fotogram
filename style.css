@@ -175,7 +175,7 @@ footer p {
     color: #FFFFFF;
 }
 
-.dialog_header button{
+.dialog_header button {
     background: none;
     border: none;
     outline: none;
@@ -184,9 +184,23 @@ footer p {
 
 .dialog_footer {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     gap: 56px;
+    color: #F5F5F5;
+    font-family: 'Figtree';
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1rem;
 }
+
+.dialog_footer button {
+    height: 60px;
+    width: 60px;
+    /* background-color: #FD5B4F; */
+    /* opacity: 0.1; */
+    border-radius: 100px;
+}
+
 
 @media screen and (min-width:992px) {
     .dialog_wrapper section img {

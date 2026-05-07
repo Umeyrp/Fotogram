@@ -41,24 +41,28 @@ function renderImages() {
 function openDialog(index) {
     dialogRef.innerHTML = `        
     <div class="dialog_wrapper">
-            <header class="dialog_header">
-                <h2>${imageTitles[index]}</h2>
-                <button onclick="closeDialog()">
-                    <img src="./assets/icons/close.svg ">
-                </button>
-            </header>
-            <section>
-                <img src="./assets/img/${images[index]}" alt="">
-            </section>
-            <div class="dialog_footer">
-                <button>Pfeil</button>
-                <p>1/12</p>
-                <button>Pfeil</button>
-            </div>
-        </div>`;
+        <header class="dialog_header">
+            <h2>${imageTitles[index]}</h2>
+            <button onclick="closeDialog()">
+                <img src="./assets/icons/close.svg ">
+            </button>
+        </header>
+        <section>
+            <img src="./assets/img/${images[index]}" alt="">
+        </section>
+        <div class="dialog_footer">
+            <button>
+                <img src="./assets/icons/Arrow-left.svg" alt="pfeil links">
+            </button>
+            <p>1/12</p>
+            <button>
+                <img src="./assets/icons/Arrow-right.svg" alt="pfeil rechts">
+            </button>
+        </div>
+    </div>`;
     dialogRef.showModal();
 }
 
-function closeDialog(){
+function closeDialog() {
     dialogRef.close();
 }
