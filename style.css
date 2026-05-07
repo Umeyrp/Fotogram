@@ -1,39 +1,39 @@
 /* figtree-regular - latin */
 @font-face {
-    font-display: swap;
     /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Figtree';
-    font-style: normal;
+    font-family: "Figtree";
     font-weight: 400;
-    src: url('./assets/fonts/figtree-v9-latin-regular.woff2') format('woff2');
+    font-display: swap;
+    font-style: normal;
+    src: url("./assets/fonts/figtree-v9-latin-regular.woff2") format("woff2");
     /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* figtree-700 - latin */
 @font-face {
-    font-display: swap;
     /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Figtree';
-    font-style: normal;
+    font-family: "Figtree";
     font-weight: 700;
-    src: url('./assets/fonts/figtree-v9-latin-700.woff2') format('woff2');
+    font-display: swap;
+    font-style: normal;
+    src: url("./assets/fonts/figtree-v9-latin-700.woff2") format("woff2");
     /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* figtree-800 - latin */
 @font-face {
-    font-display: swap;
     /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Figtree';
-    font-style: normal;
+    font-family: "Figtree";
     font-weight: 800;
-    src: url('./assets/fonts/figtree-v9-latin-800.woff2') format('woff2');
+    font-display: swap;
+    font-style: normal;
+    src: url("./assets/fonts/figtree-v9-latin-800.woff2") format("woff2");
     /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 * {
-    margin: 0;
     box-sizing: border-box;
+    margin: 0;
     scroll-behavior: smooth;
 }
 
@@ -45,14 +45,14 @@ footer {
 }
 
 body {
-    background-color: #06171E;
-    min-height: 100dvh;
     display: flex;
     flex-direction: column;
+    min-height: 100dvh;
+    background-color: #06171e;
 }
 
 header {
-    background-color: #09212A;
+    background-color: #09212a;
 }
 
 .header_content {
@@ -71,86 +71,86 @@ main {
 }
 
 h1 {
-    font-family: 'Figtree';
-    font-weight: 800;
-    font-size: 48px;
-    text-align: center;
-    color: #FFFFFF;
     margin-top: 40px;
+    font-family: "Figtree";
+    font-size: 48px;
+    font-weight: 800;
+    text-align: center;
+    color: #ffffff;
 }
 
 .images {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
-    padding: 56px 5px;
-    margin-bottom: 88px;
     justify-content: center;
+    gap: 16px;
+    margin-bottom: 88px;
+    padding: 56px 5px;
 }
 
 .image_card {
     width: 150px;
     height: 150px;
-    border: 2px solid #124658;
-    border-radius: 16px;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    border: 2px solid #124658;
+    border-radius: 16px;
 }
 
 .image_card:hover {
-    border-color: #6BC1E1;
+    border-color: #6bc1e1;
     transition: all 300ms ease-out;
 }
 
 footer {
     position: fixed;
-    width: 100%;
     bottom: 0;
+    width: 100%;
 }
 
 .footer_content {
-    padding: 20px;
     position: relative;
     display: flex;
-    align-items: center;
     flex-direction: column;
-    gap: 16px;
     justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
 }
 
 footer img:first-of-type {
-    height: 24px;
     width: 100%;
+    height: 24px;
 }
 
 .footer_background {
-    height: 100%;
-    width: 100vw;
     position: absolute;
     z-index: -1;
+    width: 100vw;
+    height: 100%;
 }
 
 footer p {
-    font-family: 'Figtree';
-    font-weight: 400;
+    font-family: "Figtree";
     font-size: 14px;
-    color: #99ACB3;
+    font-weight: 400;
+    color: #99acb3;
 }
 
-#image_dialog {
+.image_dialog {
     margin: auto;
-    background-color: #09212A;
     padding: 0;
-    border-radius: 40px;
+    background-color: #09212a;
     border: none;
+    border-radius: 40px;
 }
 
 .dialog_wrapper {
-    padding: 50px;
     display: flex;
     flex-direction: column;
     gap: 48px;
+    padding: 50px;
 }
 
 .dialog_wrapper section {
@@ -159,9 +159,9 @@ footer p {
 }
 
 .dialog_wrapper section img {
-    object-fit: cover;
-    height: 375px;
     width: 300px;
+    height: 375px;
+    object-fit: cover;
 }
 
 .dialog_header {
@@ -170,16 +170,15 @@ footer p {
 }
 
 .dialog_header>h2 {
-    font-family: 'Figtree';
-    font-weight: 700;
+    font-family: "Figtree";
     font-size: 24px;
-    color: #FFFFFF;
+    font-weight: 700;
+    color: #ffffff;
 }
 
 .dialog_header button {
     background: none;
     border: none;
-    outline: none;
     cursor: pointer;
 }
 
@@ -188,19 +187,20 @@ footer p {
     justify-content: center;
     align-items: center;
     gap: 56px;
-    color: #F5F5F5;
-    font-family: 'Figtree';
-    font-weight: 500;
+    font-family: "Figtree";
     font-size: 1rem;
+    font-weight: 500;
     line-height: 1rem;
+    color: #f5f5f5;
+
 }
 
 .dialog_footer button {
-    height: 60px;
     width: 60px;
+    height: 60px;
     background-color: rgb(253 91 79 / 10%);
-    border-radius: 100px;
     border: none;
+    border-radius: 100px;
     cursor: pointer;
 }
 
@@ -208,15 +208,14 @@ footer p {
     width: 30px;
 }
 
-dialog[open]::backdrop{
+dialog[open]::backdrop {
     background-color: #000000a6;
 }
 
-
-@media screen and (min-width:992px) {
+@media screen and (min-width: 992px) {
     .dialog_wrapper section img {
-        height: 374.71px;
         width: 560px;
+        height: 374.71px;
     }
 
     .header_content {

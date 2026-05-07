@@ -6,30 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fotogram</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./assets/icons/fotogram_logo.svg">
 </head>
 
 <body onload="renderImages()">
     <header>
         <div class="header_content">
-            <img src="./assets/icons/Capa_1.svg" alt="fotogram icon">
+            <img src="./assets/icons/fotogram_text_logo.svg" alt="fotogram icon">
         </div>
     </header>
     <main>
         <h1>Your personal photo album</h1>
-        <div class="images" id="images">
-        </div>
+        <section class="images" id="images"></section>
     </main>
     <footer>
-        <div class="footer_content">
-            <img src="./assets/icons/Logo.svg" alt="developer akademie logo">
+        <section class="footer_content">
+            <img src="./assets/icons/DA_logo.svg" alt="developer akademie logo">
             <p>© 2023 Developer Akademie GmbH</p>
             <img src="./assets/img/footer_background.png" alt="dark blue background" class="footer_background">
-        </div>
+        </section>
     </footer>
 
-    <dialog id="image_dialog">
-
-    </dialog>
+    <dialog class="image_dialog" id="image_dialog"></dialog>
 </body>
 <script src="./script.js"></script>
 
