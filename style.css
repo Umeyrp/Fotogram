@@ -141,12 +141,13 @@ footer p {
 #image_dialog {
     margin: auto;
     background-color: #09212A;
-    padding: 32px 64px;
+    padding: 0;
     border-radius: 40px;
     border: none;
 }
 
 .dialog_wrapper {
+    padding: 50px;
     display: flex;
     flex-direction: column;
     gap: 48px;
@@ -205,6 +206,10 @@ footer p {
 
 .dialog_footer p {
     width: 30px;
+}
+
+dialog[open]::backdrop{
+    background-color: #000000a6;
 }
 
 

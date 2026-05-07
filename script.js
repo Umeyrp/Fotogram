@@ -84,3 +84,13 @@ function indexMoveForward(index) {
     }
     openDialog(newindex);
 }
+
+function enableOutsideClickClose(dialogRef) {
+    dialogRef.addEventListener("click", (event) => {
+        if (event.target === dialogRef) {
+            dialogRef.close();
+        }
+    });
+}
+
+enableOutsideClickClose(dialogRef);
