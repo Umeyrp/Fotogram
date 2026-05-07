@@ -30,48 +30,59 @@ const imageTitles = [
 
 const dialogRef = document.getElementById('image_dialog');
 
-//Bilder laden
+//Load images
 function renderImages() {
-    let div = document.getElementById('images');
+    const div = document.getElementById('images');
     div.innerHTML = "";
     images.forEach((element, index) => {
-        div.innerHTML += `<button class="image_card" onclick="openDialog(${index})" style="background-image: url('./assets/img/${element}')" aria-label="Open Image: ${imageTitles[index]}"></button>`;
+        div.innerHTML += getImagesHTML(element, index);
     });
 }
 
-//Dialog öffnen
+//HTML Template for rendering images
+function getImagesHTML(element, index) {
+    return `<button 
+                class="image_card" onclick="openDialog(${index})" style="background-image: url('./assets/img/${element}')" aria-label="Open Image: ${imageTitles[index]}">
+            </button>`;
+}
+
+//Open dialog
 function openDialog(index) {
     dialogRef.innerHTML = "";
-    dialogRef.innerHTML = `        
-    <article class="dialog_wrapper">
-        <header class="dialog_header">
-            <h2>${imageTitles[index]}</h2>
-            <button onclick="closeDialog()">
-                <img src="./assets/icons/close.svg" aria-label="Close dialog">
-            </button>
-        </header>
-        <section>
-            <img src="./assets/img/${images[index]}" alt="${imageTitles[index]}">
-        </section>
-        <div class="dialog_footer">
-            <button onclick="indexMoveBack(${index})">
-                <img src="./assets/icons/arrowLeft.svg" aria-label="Previous image">
-            </button>
-            <p aria-live="polite">${index + 1}/12</p>
-            <button onclick="indexMoveForward(${index})">
-                <img src="./assets/icons/arrowRight.svg" aria-label="Next image">
-            </button>
-        </div>
-    </article>`;
+    dialogRef.innerHTML = getDialogHTML(index);
     dialogRef.showModal();
 }
 
-//Dialog schließen
+//HTML Template for dialogs
+function getDialogHTML(index) {
+    return `<article class="dialog_wrapper">
+                <header class="dialog_header">
+                    <h2>${imageTitles[index]}</h2>
+                    <button onclick="closeDialog()">
+                        <img src="./assets/icons/close.svg" aria-label="Close dialog">
+                    </button>
+                </header>
+                <section>
+                    <img src="./assets/img/${images[index]}" alt="${imageTitles[index]}">
+                </section>
+                <div class="dialog_footer">
+                    <button onclick="indexMoveBack(${index})">
+                        <img src="./assets/icons/arrowLeft.svg" aria-label="Previous image">
+                    </button>
+                    <p aria-live="polite">${index + 1}/12</p>
+                    <button onclick="indexMoveForward(${index})">
+                        <img src="./assets/icons/arrowRight.svg" aria-label="Next image">
+                    </button>
+                </div>
+            </article>`;
+}
+
+//Close dialog
 function closeDialog() {
     dialogRef.close();
 }
 
-//Im Dialog ein zurück
+//Previous image in dialog
 function indexMoveBack(index) {
     let newindex = index - 1;
     if (index == 0) {
@@ -80,7 +91,7 @@ function indexMoveBack(index) {
     openDialog(newindex);
 }
 
-//Im Dialog ein weiter
+//Next image in dialog
 function indexMoveForward(index) {
     let newindex = index + 1;
     if (index == 11) {
@@ -89,7 +100,7 @@ function indexMoveForward(index) {
     openDialog(newindex);
 }
 
-//Dialog schließen beim klicken außerhalb
+//Close dialog by clicking outside
 function enableOutsideClickClose(dialogRef) {
     dialogRef.addEventListener("click", (event) => {
         if (event.target === dialogRef) {

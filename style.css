@@ -72,6 +72,7 @@ main {
 
 h1 {
     margin-top: 40px;
+    padding: 0 2rem;
     font-family: "Figtree";
     font-size: 48px;
     font-weight: 800;
@@ -85,7 +86,7 @@ h1 {
     justify-content: center;
     gap: 16px;
     margin-bottom: 88px;
-    padding: 56px 5px;
+    padding: 56px 70px;
 }
 
 .image_card {
@@ -215,7 +216,7 @@ dialog[open]::backdrop {
 }
 
 @media screen and (min-width: 767px) {
-    .dialog_wrapper section{
+    .dialog_wrapper section {
         width: 560px;
         height: 374.71px;
     }
