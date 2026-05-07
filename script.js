@@ -34,7 +34,7 @@ function renderImages() {
     let div = document.getElementById('images');
     div.innerHTML = "";
     images.forEach(element => {
-        div.innerHTML += `<div class='image_card' onclick="openDialog(${images.indexOf(element)})" style='background-image: url("./assets/img/${element}")'></div>`;
+        div.innerHTML += `<div class='image_card' tabindex='0' onclick="openDialog(${images.indexOf(element)})" onkeydown="handleKey(event, ${images.indexOf(element)})" style='background-image: url("./assets/img/${element}")'></div>`;
     });
 }
 
@@ -53,15 +53,22 @@ function openDialog(index) {
         </section>
         <div class="dialog_footer">
             <button onclick="indexMoveBack(${index})">
-                <img src="./assets/icons/Arrowleft.svg" alt="pfeil links">
+                <img src="./assets/icons/arrowLeft.svg" alt="pfeil links">
             </button>
             <p>${index + 1}/12</p>
             <button onclick="indexMoveForward(${index})">
-                <img src="./assets/icons/Arrowright.svg" alt="pfeil rechts">
+                <img src="./assets/icons/arrowRight.svg" alt="pfeil rechts">
             </button>
         </div>
     </article>`;
     dialogRef.showModal();
+}
+
+function handleKey(event, index) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        openDialog(index);
+    }
 }
 
 function closeDialog() {
