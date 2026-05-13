@@ -40,7 +40,7 @@
 header,
 main,
 footer {
-    /*Contentbegrenzung*/
+    /*Content Limit*/
     padding: 0rem max(calc(50% - 720px), 0rem);
 }
 

@@ -44,7 +44,7 @@ function getImagesHTML(element, index) {
     return `<button 
                 class="image_card" onclick="openDialog(${index})" style="background-image: url('./assets/img/${element}')" aria-label="Open Image: ${imageTitles[index]}">
             </button>`
-    ;
+        ;
 }
 
 //Open dialog
@@ -76,7 +76,7 @@ function getDialogHTML(index) {
                     </button>
                 </div>
             </article>`
-    ;
+        ;
 }
 
 //Close dialog
