@@ -1,3 +1,3 @@
 # Fotogram
 Dynamic photo album with Javascript
-[Link to website](https://muhammedkemiksiz.developerakademie.net/Fotogram/index.html)
+[Link to website](https://muhammedkemiksiz.developerakademie.net/Javascript/Projekte/Fotogram/index.html)
